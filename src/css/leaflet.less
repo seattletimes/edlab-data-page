@@ -1,0 +1,119 @@
+@aspect-ratio: 8/10;
+
+.hash-text {
+  text-align: center;
+  margin: 1em auto;
+  .hash {
+    display: inline-block;
+    // text-align: center;
+    width: 30px;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: sub;
+    background: repeating-linear-gradient(45deg, transparent, transparent 2px, #aaa 2px, #aaa 4px);
+  }
+}
+
+
+.title {
+  width: 32.9%;
+  padding: 4px 8px;
+
+  @media @mobile { width: 100%; margin-bottom: 5px; }
+
+
+  &.inPerson {
+    margin-top: 5px;
+    width: 100%;
+  }
+
+  &.selected {
+    background-color: #7e838b;
+    color: white;
+    font-weight: bold;
+  }
+}
+
+
+
+.legend2 {
+  .title:hover {
+      background-color: #7e838b;
+      color: white;
+      font-weight: bold;
+  }
+}
+
+#legendCon .title { width: 100%; }
+
+.popuptext {
+  .bigheader {
+    font-size: 1.5em;
+    font-weight: 600;
+  }
+}
+
+.aspect-ratio-outer {
+  width: 100%;
+  position: relative;
+  .aspect-ratio-inner {
+    padding-bottom: percentage(@aspect-ratio);
+    position: relative;
+  }
+  leaflet-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    &:not([ready]) {
+      display: none;
+    }
+  }
+}
+
+#legendCon {
+  margin-bottom: 1em;
+  text-align: center;
+  font-size: 16px;
+
+  .decrease, .increase { display: inline-block; }
+
+  .decrease:before {
+    content: "decrease";
+    border-bottom: 1px solid black;
+    display: block;
+    font-size: 0.9em;
+    margin-bottom: 7px;
+  }
+  .increase:before {
+    content: "increase";
+    border-bottom: 1px solid black;
+    display: block;
+    font-size: 0.9em;
+    margin-bottom: 7px;
+  }
+
+  .legend {
+    display: inline-block;
+    vertical-align: top;
+    // margin-right: 10px;
+
+    .color {
+      min-width: 50px;
+      height: 15px;
+      opacity: 0.8;
+      // display: inline-block;
+    }
+
+    .number {
+      // display: inline-block;
+      padding: 0 7px;
+
+      span {
+
+        &.hide { display: none; }
+      }
+    }
+  }
+}

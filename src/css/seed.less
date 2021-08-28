@@ -1,0 +1,415 @@
+@import "leaflet";
+@import "seattletimes";
+
+.byline p {
+  margin: 0px;
+}
+
+.marketing__hed {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-bottom, .main-nav {
+  font-size: 0px;
+}
+
+.ad {
+  margin: 2em auto;
+}
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+
+.spinner {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  z-index: -1;
+  .fas.fa-spinner { animation: spinner 1s linear infinite;}
+}
+
+.full-width {
+  max-width: 700px;
+  margin: auto;
+  position: relative;
+
+  iframe {
+    background-color: white;
+  }
+}
+
+.half-width {
+  width: 49%;
+  display: inline-block;
+  // font-size: 0px;
+  vertical-align: top;
+  padding: 5px;
+
+  iframe {
+    display: block;
+
+  }
+
+  @media @mobile {
+    display: block;
+    width: 100%;
+    padding: 0px;
+  }
+}
+
+.half-width:first-child {
+  width: 50%;
+  @media @mobile {
+    display: block;
+    width: 100%;
+  }
+}
+
+
+.header {
+  max-width: 960px;
+  margin: auto;
+  margin-bottom: 1em;
+  padding: 10px 0;
+
+  img { width: 100%; display: block; }
+
+  @media @mobile { padding: 0; }
+
+  .padMe {
+    @media @mobile {
+      padding: 5px 15px 0 15px;
+    }
+  }
+
+}
+
+.rule {
+  border-bottom: 1px solid black;
+  margin: 1em auto 2em auto;
+}
+
+.rowRule {
+  border-bottom: 0px solid @df-border-gray;
+  width: 50%;
+  margin: 2em auto;
+  clear: both;
+}
+
+
+#data-page {
+  max-width: 960px;
+  margin: 0 auto 1em auto;
+  font-family: @df-sans;
+  padding: 15px;
+  min-height: 100vh;
+
+  .data-source.update {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    margin: 0;
+  }
+
+  .data-source.sources {
+    margin: 1em auto 0 auto;
+    padding: 0 10px;
+    text-align: right;
+    float: none;
+
+    a { color: #0777b3; }
+
+    @media @mobile {
+      text-align: left;
+    }
+
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 43px;
+    margin-top: 0px;
+    font-family: @df-serif;
+
+    @media @mobile { font-size: 35px; }
+  }
+
+  .bigChatter {
+    font-family: @df-serif;
+  }
+
+  .cardTitle {
+    text-align: center;
+    margin-top: 40px;
+    color: @df-dark-gray;
+    span {
+      // font-style: italic;
+      font-weight: bold;
+      background-color: #b6d4e6;
+      font-size: 24px;
+      padding: 0 10px;
+    }
+  }
+
+  .container {
+    font-size: 0;
+    margin-top: 15px;
+  }
+
+  .box:nth-child(even) {
+    border-left: none;
+    border-right: none;
+
+    @media @mobile { border: 1px solid #aaa; }
+  }
+
+  .box {
+    padding: 0.5em 1em;
+    position: relative;
+    display: inline-block;
+    border: 1px solid #aaa;
+
+    width: 33.33%;
+    height: 200px;
+    margin-top: 5px;
+    vertical-align: top;
+    // background-color: white;
+
+    &:not(.selected):hover {
+      // border: 2px solid black;
+      background-color: #e8f2f7;
+      cursor: pointer;
+    }
+
+    @media (max-width: 950px) {
+      height: 230px;
+    }
+
+    @media @mobile {
+      width: 100%;
+      display: block;
+      height: 180px;
+    }
+
+    &.highlightRow {
+      border-bottom: 1px solid #aaa;
+    }
+
+    &.selected {
+      border: 1px solid #aaa;
+      border-bottom: none;
+      background-color: #e8f2f7;
+    }
+
+    // &.selected:after {
+    //   content: ""; /* This is necessary for the pseudo element to work. */
+    //   display: block; /* This will put the pseudo element on its own line. */
+    //   width: 70%;
+    //   border-bottom: 2px dashed black;
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: 0;
+    //   right: 0;
+    //   margin: auto;
+    // }
+  }
+
+
+
+
+
+  .selected:hover { cursor: pointer; }
+
+  .expand {
+    display: none;
+    position: relative;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-top: none;
+    font-size: 18px;
+
+    &.noPadding {
+      .chatter {
+        padding: 10px;
+      }
+      @media @mobile {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.graph {
+  margin-bottom: 0.5em;
+  // @media @mobile { }
+}
+
+
+.hed {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3em;
+  padding: 10px 0;
+
+  &.inset {
+    max-width: 700px;
+    margin: auto;
+  }
+}
+
+.chatter {
+  margin-bottom: 2em;
+  font-size: 16px;
+  max-width: 630px;
+  margin: 0 auto 2em auto;
+
+  &.noBottom {
+    margin-bottom: 10px;
+  }
+}
+
+.graph {
+  img { width: 100%; }
+}
+
+.tinyhed {
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding-top: 20px;
+  line-height: 1em;
+  color: @df-middle-gray;
+}
+
+.tinygraph {
+  width: 90%;
+  text-align: center;
+  margin: 20px auto 0 auto;
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%,-40%);
+  font-size: 18px;
+
+  span {
+    font-weight: bold;
+    // color: #8e3243;
+    // #1f5677;
+  }
+}
+
+.chevs {
+  font-size: 15px;
+  text-align: center;
+  background-color: @df-middle-gray;
+  color: white;
+  width: 25px;
+  height: 24px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 30px;
+
+  @media @mobile { bottom: 20px; }
+
+  i {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  .fa-minus {
+    display: none;
+  }
+  .fa-plus {
+    display: block;
+  }
+
+  &.selected {
+    .fa-minus {
+      display: block;
+    }
+    .fa-plus {
+      display: none;
+    }
+  }
+}
+
+.hedline {
+  font-size: 1.5em;
+  border-top: 1px solid #ccc;
+  padding-top: 1.5em;
+  margin-top: 2em;
+  line-height: 1.2em;
+  font-weight: bold;
+}
+
+.story {
+  p {
+    margin: 0.5em auto;
+    font-size: 17px;
+  }
+}
+
+.furniture {
+  margin: 20px auto;
+  padding: 20px 0;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  font-family: @df-sans;
+
+  .labLogo {
+    width: 200px;
+    padding-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    img { width: 100%; }
+
+    @media @mobile { display: block; width: 130px; padding-right: 0; margin: 10px auto;}
+  }
+  .labText {
+    font-size: 15px;
+    vertical-align: middle;
+    display: inline-block;
+    width:  ~"calc(100% - 205px)";
+    a { color: #0777b3; }
+    @media @mobile { display: block; width: 100%; }
+  }
+}
+
+
+
+.directions {
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  color: @df-middle-gray;
+  // font-style: italic;
+  margin-bottom: 40px;
+
+  &.short {
+    margin-bottom: 10px;
+  }
+
+  span {
+    &.desktop {
+      display: inline;
+      @media @mobile { display: none; }
+    }
+    &.mobile {
+      display: none;
+      @media @mobile { display: inline; }
+    }
+  }
+}

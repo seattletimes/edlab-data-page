@@ -1,0 +1,59 @@
+<div id="graph4">
+  <div class="hed inset">
+        In-person learning more common in conservative, white and rural parts of Washington
+  </div>
+      <div class="chatter">As of March 8, prior to Gov. Jay Inslee's order that all schools reopen, more students were attending school in person if they lived in a county where Donald Trump won a majority of votes in the 2020 election. In-person learning was also more common in rural districts and those where a majority of students are white.</div>
+
+      <aside class="legend2">
+        <div class="hash-text"><div class="hash"></div> Districts with a majority:</div>
+        <button class="title Trump">Trump votes in county</button>
+        <button class="title Rural">Rural student population</button>
+        <button class="title White">White student population</button>
+      </aside>
+
+      <button class="title inPerson selected">No overlay</button>
+
+      <div id="legendCon">
+          <div class="title">Students attending in person</div>
+          <div class="legend">
+            <div class="color" style="background-color: #eff3ff"></div>
+            <div class="number">
+              <span class="tests_pos">0-24.9%</span>
+            </div>
+          </div>
+
+        <div class="legend">
+          <div class="color" style="background-color: #bdd7e7"></div>
+          <div class="number">
+            <span class="tests_pos">25.0-49.9%</span>
+          </div>
+        </div>
+
+        <div class="legend">
+          <div class="color" style="background-color: #6baed6"></div>
+          <div class="number">
+            <span class="tests_pos">50.0-74.9%</span>
+          </div>
+        </div>
+
+
+        <div class="legend">
+          <div class="color" style="background-color: #2171b5;"></div>
+          <div class="number">
+            <span class="tests_pos">75.0-100%</span>
+          </div>
+        </div>
+
+
+    </div>
+
+
+      <div class="aspect-ratio-outer">
+        <div class="aspect-ratio-inner">
+          <leaflet-map id="leaflet-map">
+            <tile-layer layer="cartoPositron"></tile-layer>
+          </leaflet-map>
+        </div>
+      </div>
+
+</div>

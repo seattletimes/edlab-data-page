@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <%= t.include("partials/_head.html", grunt.data.json) %>
+    <% if (!json.project.embedded) { %>
+      <%= t.include("partials/_dataLayer.html") %>
+      <script src="https://seattle-times.zeustechnology.com/main.js" async></script>
+      <script src="https://www.seattletimes.com/wp-content/plugins/st-advertising/dist/st-projects-bundle.js" async></script>
+    <% } %>
+    <% if (json.project.production && !json.project.embedded) { %>
+      <%= t.include("partials/_gtm.html") %>
+    <% } %>
+    <script src="https://kit.fontawesome.com/9d53be7224.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <% if (json.project.production && !json.project.embedded) { %>
+      <%= t.include("partials/_gtmNoScript.html") %>
+    <% } %>
+    <responsive-child>
+          <!-- content goes here -->
+          <% doc = archieml.EdLab_Data_Page_Intro %>
+
+          <%=  t.include("partials/_nav.html") %>
+
+          <%=  t.include("partials/_ad.html", {number: 1}) %>
+
+
+
+          <div id="data-page">
+            <h1>EdLab headline here</h1>
+
+            <div class="header">
+              <div>
+                <img alt="Traffic on Interstate 5 whizzes past tents near North Seattle College in April. (Ellen M. Banner / The Seattle Times)"
+                srcset="assets/story1.jpg  1000w,
+                      assets/story1.jpg 450w"
+                sizes="(max-width: 500px) 33vw, 100vw"
+                src="assets/story1.jpg">
+                <div class="data-source padMe" style="margin-top: 5px;">Traffic on Interstate 5 whizzes past tents near North Seattle College in April. (Ellen M. Banner / The Seattle Times)</div>
+              </div>
+            </div>
+
+
+            <div class="byline" style="margin-top: 3em;">
+              <p>By Seattle Times staff</p>
+              <p class="publish-date">Published June 27, 2021</p>
+            </div>
+
+
+            <div class="bigChatter">
+              <% doc.intro.forEach(function(s,i) { %>
+                <p class="body-text"><%= s.value %></p>
+              <% }) %>
+
+
+              <div class="furniture">
+                <div class="labLogo"><a href="https://www.seattletimes.com/education-lab/" rel="nofollow noreferrer noopener" target="_blank"><img src="assets/EducationLabLogo.jpg" alt="Seattle Times Education Lab logo"></a></div>
+                <div class="labText">
+                  <a href="https://www.seattletimes.com/education-lab/" rel="nofollow noreferrer" target="_blank">Education Lab</a> is a Seattle Times project that spotlights promising approaches
+                  to persistent challenges in public education. The Seattle Foundation serves as fiscal sponsor for Education Lab,
+                  which is supported by grants from the Bill & Melinda Gates Foundation, Amazon, Comcast Washington and City University
+                  of Seattle. <a href="http://www.seattletimes.com/education-lab-about/" target="_blank" rel="noopener noreferrer">Learn more about Ed Lab</a>.&nbsp;
+                  <a class="u-dib" href="https://www.twitter.com/EducationLab" target="_blank" rel="noopener noreferrer"><img class="alignnone" src="https://assets.seattletimes.com/edlab/i-twitter-15x15.gif" alt="" width="15" height="15" pinger-seen="true"></a>
+                </div>
+              </div>
+
+
+
+              <% doc.intro2.forEach(function(s,i) { %>
+                <p class="body-text"><%= s.value %></p>
+              <% }) %>
+            </div>
+
+
+
+
+            <hr class="rule">
+
+            <div class="directions">
+              Select a topic below to see data and charts
+            </div>
+
+            <div class="cardTitle"><span>The pandemic pushed some kids out of public schools</span></div>
+
+              <div class="container" data-set="1">
+                <div class="box" data-num="1">
+                  <div class="tinyhed">K12 Enrollment</div>
+                  <div class="tinygraph">About <span>4% fewer</span> kids went to school.</div>
+                  <div class="chevs">
+                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-minus"></i>
+                  </div>
+                  <!-- <p class="data-source update">Updated Aug. 1, 2020</p> -->
+                </div>
+
+                <div class="box inner" data-num="2">
+                  <div class="tinyhed">For-profit schools</div>
+                  <div class="tinygraph">
+                    Enrollment <span>up 35%</span> in a year.
+                  </div>
+                  <div class="chevs">
+                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-minus"></i>
+                  </div>
+                  <!-- <p class="data-source update">Updated Aug. 1, 2020</p> -->
+                </div>
+
+                <div class="box" data-num="3">
+                  <div class="tinyhed">School reopenings</div>
+                  <div class="tinygraph">
+                    <span>More conservative</span> areas offered in&#x2011;school learning first.
+                  </div>
+                  <div class="chevs">
+                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-minus"></i>
+                  </div>
+                  <!-- <p class="data-source update">Updated Aug. 1, 2020</p> -->
+                </div>
+              </div>
+
+              <div class="expandContainer" data-set="1">
+                <div class="expand" data-num="1">
+                    <div class="graph">
+                      <%= t.include("partials/_graph1.html") %>
+                    </div>
+                  <div class="data-source sources">Source:
+                    <a href="https://www.k12.wa.us/" target="_blank" rel="nofollow noreferrer nooopener">Washington Office of Superintendent of Public Instruction (OSPI)</a>
+                  </div>
+                </div>
+
+                <div class="expand" data-num="2">
+                  <div class="hed">For-profit schools</div>
+                  <div class="chatter">
+                    Private online schools saw big enrollment increases in the 2020-21 school year. Some critics worry these schools are poorly regulated and offer an inferior education experience.
+                  </div>
+                  <div class="graph">
+                    <%= t.include("partials/_graph3.html") %>
+                  </div>
+                  <div class="data-source sources">Source:
+                    <a href="https://www.k12.wa.us/" target="blank" rel="nofollow noreferrer noopener">Washington Office of Superintendent of Public Instruction (OSPI)</a>
+                  </div>
+                </div>
+
+                <div class="expand" data-num="3">
+                  <div class="graph">
+                    <%= t.include("partials/_graph4.html") %>
+                  </div>
+                  <div class="data-source sources">Source:
+                    <a href="https://www.k12.wa.us/" target="blank" rel="nofollow noreferrer noopener">
+                      Washington State Office of Superintendent of Public Instruction
+                    </a> and
+                    <a href="https://www.sos.wa.gov/" target="blank" rel="nofollow noreferrer noopener">
+                    Washington Secretary of State</a>.
+                  </div>
+                </div>
+
+              </div>
+
+
+            <hr class="rowRule">
+
+
+              <div class="cardTitle"><span>Many low-income students didn’t make it to college during the pandemic</span></div>
+
+              <div class="container" data-set="2">
+                <div class="box" data-num="1">
+                  <div class="tinyhed">Community colleges</div>
+                  <div class="tinygraph">
+                    Enrollment <span>dropped about 18%</span>.
+                  </div>
+                  <div class="chevs">
+                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-minus"></i>
+                  </div>
+                  <!-- <p class="data-source update">Updated Aug. 1, 2020</p> -->
+                </div>
+
+                <div class="box inner" data-num="2">
+                  <div class="tinyhed">FAFSA Completion</div>
+                  <div class="tinygraph">
+                    Completion rates are <span>declining</span>.
+                  </div>
+                  <div class="chevs">
+                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-minus"></i>
+                  </div>
+                  <!-- <p class="data-source update">Updated Aug. 1, 2020</p> -->
+                </div>
+
+                <div class="box" data-num="3">
+                  <div class="tinyhed">Income over time</div>
+                  <div class="tinygraph">
+                    <span>Some</span> stat here.
+                  </div>
+                  <div class="chevs">
+                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-minus"></i>
+                  </div>
+                  <!-- <p class="data-source update">Updated Aug. 1, 2020</p> -->
+                </div>
+              </div>
+
+
+              <div class="expandContainer" data-set="2">
+
+                <div class="expand" data-num="1">
+                  <div class="hed">Community Colleges</div>
+                  <div class="chatter">
+                    Many low-income students start their higher-education careers at one of Washington’s 34 community and technical colleges. Those colleges saw enrollments decline sharply in 2020-21.
+                  </div>
+                  <div class="graph">
+                    <%= t.include("partials/_graph2.html") %>
+                  </div>
+                  <div class="data-source sources">Source:
+                    <a href="https://www.sbctc.edu/colleges-staff/research/data-public/enrollment-data-dashboard.aspx" target="_blank" rel="nofollow noreferrer noopener"> Washington State Board for Community and Technical Colleges</a></div>
+                </div>
+
+                <div class="expand" data-num="2">
+                  <div class="hed">FAFSA Completion</div>
+                  <div class="chatter">
+                    The Free Application for Federal Student Aid unlocks financial aid dollars for students -- as long as they fill it out and qualify. But Washington students have often lagged the nation in completing the form.
+                  </div>
+
+                  <div class="graph">
+                    <%= t.include("partials/_graph6.html") %>
+                  </div>
+                  <div class="data-source sources">Source:
+                    <a href="https://public.tableau.com/app/profile/wsac/viz/WAStateFAFSACompletionDashboard/StateFAFSACompletion" target="blank" rel="nofollow noreferrer noopener">Washington Student Achievement Council</a>
+                  </div>
+                </div>
+
+                <div class="expand" data-num="3">
+                  <div class="graph">
+                    <%= t.include("partials/_graph5.html") %>
+                  </div>
+                  <div class="data-source sources" style="clear:both;">Source:
+                    <a href="https://www.bls.gov/careeroutlook/2021/data-on-display/education-pays.htm" target="blank" rel="nofollow noreferrer noopener">U.S. Bureau of Labor Statistics</a>
+                  </div>
+                </div>
+
+            </div>
+
+            <%=  t.include("partials/_ad.html", {number: 3}) %>
+
+            <%=   t.include("partials/_dontMiss.html") %>
+
+
+
+    <hr class="rule">
+
+      <section class="thin-div">
+    	   <div class="center">Credits</div>
+      </section>
+
+    <section class="project-credits">
+    		<p class="project-credit"><strong>Reporting: </strong>
+          <a href="https://www.seattletimes.com/author/hannah-furfaro/">Hannah Furfaro</a> and
+          <a href="https://www.seattletimes.com/author/dahlia-bazzaz/">Dahlia Bazzaz</a>
+        </p>
+    		<p class="project-credit"><strong>Graphics: </strong><a href="https://www.seattletimes.com/author/lauren-flannery/">Lauren Flannery</a></p>
+    		<p class="project-credit"><strong>Design and development: </strong><a href="https://www.seattletimes.com/author/lauren-flannery/">Lauren Flannery</a></p>
+    		<p class="project-credit"><strong>Editing: </strong>Richard Wagoner, Katherine B. Long, Emily M. Eng and Frank Mina</p>
+    </section>
+
+
+    <section class="marketing marketing--footer">
+    	<div class="marketing__text marketing__hed">Find this resource valuable?</div>
+    	<p class="marketing__text marketing__body">Support independent journalism at The Seattle Times by subscribing.</p>
+    	<a class="marketing__button" href="https://www.seattletimes.com/subscribe/signup/?icn=promo-project&amp;ici=subscribe">Subscribe</a>
+    </section>
+
+
+
+
+    </div>
+    </div><!-- end of data page -->
+
+
+
+
+
+  </responsive-child>
+
+  <%= t.include("partials/_navBottom.html") %>
+
+
+    <script src="app.js" async></script>
+    <% if (json.project.production) { %>
+    <%= !json.project.embedded ? t.include("partials/_analytics.html") : "" %>
+    <%= t.include("partials/_workHere.html") %>
+    <% } %>
+  </body>
+</html>
