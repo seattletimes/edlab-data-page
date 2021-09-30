@@ -3,6 +3,7 @@
 .hash-text {
   text-align: center;
   margin: 1em auto;
+  font-size: 15px;
   .hash {
     display: inline-block;
     // text-align: center;
@@ -16,16 +17,19 @@
 
 
 .title {
-  width: 32.9%;
-  padding: 4px 8px;
+  width: ~"calc(50% - 10px)";
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
 
   @media @mobile { width: 100%; margin-bottom: 5px; }
 
 
-  &.inPerson {
-    margin-top: 5px;
-    width: 100%;
-  }
+  // &.inPerson {
+  //   margin-top: 5px;
+  //   width: 100%;
+  // }
 
   &.selected {
     background-color: #7e838b;
@@ -34,12 +38,23 @@
   }
 }
 
+.title:nth-child(odd) {
+  margin-left: 5px;
+  @media @mobile { margin-left: 0px; }
+}
+.title:nth-child(even) {
+  margin-right: 5px;
+  @media @mobile { margin-right: 0px; }
+}
+
 
 
 .legend2 {
+  font-size: 0px;
   .title:hover {
-      background-color: #7e838b;
-      color: white;
+      // background-color: #7e838b;
+      // border: 1px solid #7e838b;
+      // color: white;
       font-weight: bold;
   }
 }

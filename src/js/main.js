@@ -121,9 +121,9 @@ map.scrollWheelZoom.disable();
 var templateFilePolitics = require("./_popupPolitics.html");
 ich.addTemplate("popupPoli", templateFilePolitics);
 
-var onEachFeature = function(feature, layer) {
-layer.bindPopup(ich.popupPoli(feature.properties))
-};
+// var onEachFeature = function(feature, layer) {
+// layer.bindPopup(ich.popupPoli(feature.properties))
+// };
 
 var data = require("./data2.geo.json");
 
@@ -157,7 +157,7 @@ data.features.forEach(function(f) {
 
 
 var onEachFeaturePoli = function(feature, layer) {
-  layer.bindPopup(ich.popup(feature.properties))
+  layer.bindPopup(ich.popupPoli(feature.properties))
   layer.on({
     mouseover: function(e) {
       layer.setStyle({ weight: 2, fillOpacity: 0.9 });

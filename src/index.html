@@ -28,23 +28,25 @@
 
 
           <div id="data-page">
-            <h1>EdLab headline here</h1>
+            <h1>Returning to the classroom</h1>
 
             <div class="header">
               <div>
-                <img alt="Traffic on Interstate 5 whizzes past tents near North Seattle College in April. (Ellen M. Banner / The Seattle Times)"
-                srcset="assets/story1.jpg  1000w,
-                      assets/story1.jpg 450w"
+                <img alt="Students pass a school bus after being dropped off Sept. 17, 2021 at Rising Star Elementary School. (Daniel Kim / The Seattle Times)"
+                srcset="assets/Back_to_school_crop.jpg  1000w,
+                      assets/Back_to_school_mobile.jpg 450w"
                 sizes="(max-width: 500px) 33vw, 100vw"
-                src="assets/story1.jpg">
-                <div class="data-source padMe" style="margin-top: 5px;">Traffic on Interstate 5 whizzes past tents near North Seattle College in April. (Ellen M. Banner / The Seattle Times)</div>
+                src="assets/Back_to_school_mobile.jpg">
+                <div class="data-source padMe" style="margin-top: 5px;">
+                  Students pass a school bus after being dropped off Sept. 17, 2021 at Rising Star Elementary School. (Daniel Kim / The Seattle Times)
+                </div>
               </div>
             </div>
 
 
             <div class="byline" style="margin-top: 3em;">
               <p>By Seattle Times staff</p>
-              <p class="publish-date">Published June 27, 2021</p>
+              <p class="publish-date">Published Oct. XX, 2021</p>
             </div>
 
 
@@ -81,12 +83,12 @@
               Select a topic below to see data and charts
             </div>
 
-            <div class="cardTitle"><span>The pandemic pushed some kids out of public schools</span></div>
+            <div class="cardTitle"><span>The pandemic pushed some kids out of public schools last year</span></div>
 
               <div class="container" data-set="1">
                 <div class="box" data-num="1">
                   <div class="tinyhed">K12 Enrollment</div>
-                  <div class="tinygraph">About <span>4% fewer</span> kids went to school.</div>
+                  <div class="tinygraph">About <span>4% fewer</span> kids went to school in 2020-21.</div>
                   <div class="chevs">
                     <i class="fas fa-plus"></i>
                     <i class="fas fa-minus"></i>
@@ -125,20 +127,21 @@
                       <%= t.include("partials/_graph1.html") %>
                     </div>
                   <div class="data-source sources">Source:
-                    <a href="https://www.k12.wa.us/" target="_blank" rel="nofollow noreferrer nooopener">Washington Office of Superintendent of Public Instruction (OSPI)</a>
+                    <a href="https://www.k12.wa.us/" target="_blank" rel="nofollow noreferrer nooopener">Washington Office of Superintendent of Public Instruction</a>
                   </div>
                 </div>
 
                 <div class="expand" data-num="2">
-                  <div class="hed">For-profit schools</div>
-                  <div class="chatter">
-                    Private online schools saw big enrollment increases in the 2020-21 school year. Some critics worry these schools are poorly regulated and offer an inferior education experience.
+                  <div class="hed main">For-profit schools</div>
+                  <div class="chatter main">
+                    Private online schools saw big enrollment increases in the 2020-21 school year. Some critics worry these schools are poorly regulated and provide an inferior education.
                   </div>
                   <div class="graph">
+                    <hr class="rowRule">
                     <%= t.include("partials/_graph3.html") %>
                   </div>
                   <div class="data-source sources">Source:
-                    <a href="https://www.k12.wa.us/" target="blank" rel="nofollow noreferrer noopener">Washington Office of Superintendent of Public Instruction (OSPI)</a>
+                    <a href="https://www.k12.wa.us/" target="blank" rel="nofollow noreferrer noopener">Washington Office of Superintendent of Public Instruction</a>
                   </div>
                 </div>
 
@@ -161,7 +164,7 @@
             <hr class="rowRule">
 
 
-              <div class="cardTitle"><span>Many low-income students didn’t make it to college during the pandemic</span></div>
+              <div class="cardTitle"><span>Many low-income students aren't going to college during the pandemic</span></div>
 
               <div class="container" data-set="2">
                 <div class="box" data-num="1">
@@ -177,9 +180,9 @@
                 </div>
 
                 <div class="box inner" data-num="2">
-                  <div class="tinyhed">FAFSA Completion</div>
+                  <div class="tinyhed">FAFSA completion</div>
                   <div class="tinygraph">
-                    Completion rates are <span>declining</span>.
+                    Completion rates <span>declined</span>.
                   </div>
                   <div class="chevs">
                     <i class="fas fa-plus"></i>
@@ -191,7 +194,7 @@
                 <div class="box" data-num="3">
                   <div class="tinyhed">Income over time</div>
                   <div class="tinygraph">
-                    <span>Some</span> stat here.
+                    People with a bachelor’s degree <span>earn twice as much</span> as those without a high school diploma.
                   </div>
                   <div class="chevs">
                     <i class="fas fa-plus"></i>
@@ -205,9 +208,9 @@
               <div class="expandContainer" data-set="2">
 
                 <div class="expand" data-num="1">
-                  <div class="hed">Community Colleges</div>
+                  <div class="hed">Community colleges</div>
                   <div class="chatter">
-                    Many low-income students start their higher-education careers at one of Washington’s 34 community and technical colleges. Those colleges saw enrollments decline sharply in 2020-21.
+                    Many low-income students start higher education at one of Washington’s 34 community and technical colleges. Those colleges saw enrollments decline sharply in 2020-21.
                   </div>
                   <div class="graph">
                     <%= t.include("partials/_graph2.html") %>
@@ -217,12 +220,13 @@
                 </div>
 
                 <div class="expand" data-num="2">
-                  <div class="hed">FAFSA Completion</div>
-                  <div class="chatter">
-                    The Free Application for Federal Student Aid unlocks financial aid dollars for students -- as long as they fill it out and qualify. But Washington students have often lagged the nation in completing the form.
+                  <div class="hed main">FAFSA completion</div>
+                  <div class="chatter main">
+                    The Free Application for Federal Student Aid unlocks financial aid dollars for students &#x2014; as long as they fill it out and qualify. But Washington students have often lagged the nation in completing the form.
                   </div>
 
                   <div class="graph">
+                    <hr class="rowRule">
                     <%= t.include("partials/_graph6.html") %>
                   </div>
                   <div class="data-source sources">Source:
