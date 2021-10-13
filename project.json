@@ -6,15 +6,15 @@
     },
     "live": {
       "bucket": "projects.seattletimes.com",
-      "path": ""
+      "path": "2021/local/education-lab-data-page-back-to-school"
     }
   },
-  "title": "",
-  "description": "",
-  "author": "",
+  "title": "The pandemic's toll on enrollment in Washington's schools",
+  "description": "The pandemic pushed some students out of Washington's schools. New data tells us who left.",
+  "author": "Seattle Times staff",
   "url": "",
-  "post_id": 0,
-  "image": "assets/social.jpg",
+  "post_id": 14298508,
+  "image": "assets/Back_to_school_crop.jpg",
   "sheets": [],
   "docs": ["16Uf88t6yja7yy2cfClElPixXFEF2DdoF8Ifde2Bk3no"],
   "embedded": false,
